@@ -13,7 +13,7 @@
  * writing app.js a little simpler to work with.
  */
 
-var Engine = (function(global) {
+var Engine = function(global) {
     /* Predefine the variables we'll be using within this scope,
      * create the canvas element, grab the 2D context for that canvas
      * set the canvas elements height/width and add it to the DOM.
@@ -94,6 +94,9 @@ var Engine = (function(global) {
             enemy.update(dt);
         });
         player.update();
+        allGems.forEach(function(gem) {
+            gem.update();
+        });
     }
 
     /* This function initially draws the "game level", it will then call
@@ -154,6 +157,10 @@ var Engine = (function(global) {
         });
 
         player.render();
+
+        allGems.forEach(function(gem) {
+            gem.render();
+        });
     }
 
     /* This function does nothing but it could have been a good place to
@@ -172,8 +179,13 @@ var Engine = (function(global) {
         'images/stone-block.png',
         'images/water-block.png',
         'images/grass-block.png',
+        'images/Gem Blue.png',
+        'images/Gem Green.png',
+        'images/Gem Orange.png',
         'images/enemy-bug.png',
-        'images/char-boy.png'
+        'images/char-boy.png',
+        'images/char-cat-girl.png',
+        'images/char-horn-girl.png', 
     ]);
     Resources.onReady(init);
 
@@ -182,4 +194,32 @@ var Engine = (function(global) {
      * from within their app.js files.
      */
     global.ctx = ctx;
-})(this);
+};
+
+// Event Listener for Role selection
+const btns = document.querySelector(".role-sel");
+
+btns.addEventListener('click', function(e){
+    let clickedRole = e.target;
+
+    if (clickedRole.classList.contains("role") === true) {
+        btns.classList.add('hide');     // hide the role selection area after role selected
+        switch (clickedRole.className) {
+            case 'role boy':
+                console.log("boy");
+                player.sprite = 'images/char-boy.png';
+                break;
+            case 'role cat-girl':
+                console.log("cat girl");
+                player.sprite = 'images/char-cat-girl.png';
+                break;            
+            case 'role horn-girl':
+                console.log("horn girl");
+                player.sprite = 'images/char-horn-girl.png';
+                break;       
+        }
+        Engine(window);     // start the game engine after role selected
+    } else {
+        console.log("not click on li");
+    }
+})

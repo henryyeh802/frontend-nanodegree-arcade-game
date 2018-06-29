@@ -1,3 +1,75 @@
 body {
     text-align: center;
 }
+
+.container {
+	width: 505px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.header h1 {
+	border: 2px solid rgb(192, 192, 192, .4);
+	border-radius: 15px;
+	box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.scoreboard {
+	display: flex;
+	justify-content: space-around;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.scoreboard p {
+	margin: 0;
+}
+
+.scoreboard #exit {
+	font-size: 16px;
+}
+
+.role-sel {
+	margin-top: 20px;
+	/*display: none;*/
+}
+
+.hide {
+	display: none;
+}
+
+.role-sel p {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.role-sel ul {
+	margin: 0;
+    padding: 0;
+	display: inline-block;
+}
+
+.role-sel li {
+	width: 71px;
+	height: 90px;
+    display: inline-block;
+    background-color: blue;
+    margin: 0 10px;
+}
+
+.role-sel li:hover{
+	cursor: pointer;
+}
+
+.role-sel li:nth-child(1) {
+	background: url('../images/char-boy-sm.png');
+}
+
+.role-sel li:nth-child(2) {
+	background: url('../images/char-horn-girl-sm.png');
+}
+
+.role-sel li:nth-child(3) {
+	background: url('../images/char-cat-girl-sm.png');
+}
