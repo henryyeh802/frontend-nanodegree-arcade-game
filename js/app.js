@@ -149,7 +149,7 @@ Player.prototype.update = function() {
         this.score += 10;   // add 10 points for each win
         this.showScore();
         setTimeout(function() {
-            alert("You won! Press any key to continue.");
+            alert("You won! Click 'OK' to continue.");
             player.x = 202;
             player.y = 388;
             player.won = false;
