@@ -11,6 +11,11 @@ Game introduction
 
 In this game you have a Player and Enemies (Bugs). The goal of the player is to reach the water, without colliding into any one of the enemies. The player can move left, right, up and down. The enemies move in varying speeds on the paved block portion of the scene. Once the player collides with an enemy, the game is reset and the player moves back to the start square. Once the player reaches the water the game is won.
 
+How to load/run the game:
+
+* Download or clone the repro from https://github.com/henryyeh802/frontend-nanodegree-arcade-game.git
+* Load the index.html (from the downloaded/cloned repro) on to the browser to load/run the game
+
 
 How to play:
 
